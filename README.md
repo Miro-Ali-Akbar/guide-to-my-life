@@ -8,9 +8,8 @@ Feel free to use any guides that may be useful but i don't really know what i am
 ## Guides done so far:
 * __Homeassistant__
 	* Setting up a light strip with homeassistant using [local\_tuya](homeassistant/tuya_local_light_strip.md)
-	* How to login to the git terminal using [git cli](git_terminal_login) 
-* How to revert to a backup in [homeassistant](homeassistant/reverting_backup)
-
+	* How to revert to a backup in [homeassistant](homeassistant/reverting_backup.md)
+* How to login to the git terminal using [git cli](git_terminal_login.md) 
 
 
 BYE!
