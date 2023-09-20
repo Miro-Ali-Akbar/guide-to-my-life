@@ -1,5 +1,5 @@
 # How to revert to a backup in homeassistant
-You've broken and or bricked homeassistant - *oh no :(* 
+You've broken and or bricked homeassistant - *oh no :(*\
 It happens the the best of us but fret not i will show you the way to the light
 
 0. Be smart and have a backup on your google drive using this [addon](https://github.com/sabeechen/hassio-google-drive-backup#readme)
