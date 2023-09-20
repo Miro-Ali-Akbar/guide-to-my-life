@@ -6,7 +6,7 @@ It happens the the best of us but fret not i will show you the way to the light
 1.  Remove sd card for the raspberry pi preferably after turning the power of
 2. Use [Balenaetcher](https://etcher.balena.io/) to wipe and rewrite homeassistant to the sd card.
 3. Restart homeassistant and wait for it to finish configuring.
-4. Go to [homeassistant](http://homeassistant:8123)and select recover from backup using the backup you have
+4. Go to [homeassistant](http://homeassistant:8123) and select recover from backup using the backup you have
 5. Wait a __long__ time for it to figure things out
 
 Start using homeassistant without making the same mistake you did before!
