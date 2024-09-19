@@ -12,6 +12,7 @@ Feel free to use any guides that may be useful but i don't really know what i am
 * __Homeassistant__
 	* Setting up a light strip with homeassistant using [local\_tuya](homeassistant/tuya_local_light_strip.md)
 	* How to revert to a backup in [homeassistant](homeassistant/reverting_backup.md)
+	* How to [renew Tuya IoT core](homeassistant/tuya_renew_iot_core.md)
 * How to login to the git terminal using [git cli](git_terminal_login.md) 
 
 
