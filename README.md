@@ -1,8 +1,5 @@
 # guide-to-my-life
 Welcome to me creating guides to things i have already figured out but cant remember for long.
-
-This will also be my experiment with learning __markdown__ *wow*
-
 Feel free to use any guides that may be useful but i don't really know what i am doing.
 
 ## Guides done so far:
@@ -15,6 +12,9 @@ Feel free to use any guides that may be useful but i don't really know what i am
 	* How to revert to a backup in [homeassistant](homeassistant/reverting_backup.md)
 	* How to [renew Tuya IoT core](homeassistant/tuya_renew_iot_core.md)
 * How to login to the git terminal using [git cli](git_terminal_login.md) 
+* __Mods__
+	* [WiiU](mods/wiiu.md) modding notes for the Wii u
+	* [vWii](mods/vwii.md) modding notes for the virtual Wii modding
 
 
 BYE!
