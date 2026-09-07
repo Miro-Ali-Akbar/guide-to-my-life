@@ -7,11 +7,12 @@ Feel free to use any guides that may be useful but i don't really know what i am
 	* installing my [dotfiles](linux_enviorment/dotfiles.md)
 	* Gnome [backup](linux_enviorment/gnome_backup.md)
 	* Gnome [extentions](linux_enviorment/gnome_config.md)
+    * Set up a wireguard connection to my [nas](linux_enviorment/wireguard_nas.md)
 * __Homeassistant__
 	* Setting up a light strip with homeassistant using [local\_tuya](homeassistant/tuya_local_light_strip.md)
 	* How to revert to a backup in [homeassistant](homeassistant/reverting_backup.md)
 	* How to [renew Tuya IoT core](homeassistant/tuya_renew_iot_core.md)
-* How to login to the git terminal using [git cli](git_terminal_login.md) 
+* How to login to the git terminal using [git cli](git_terminal_login.md)
 * __Mods__
 	* [WiiU](mods/wiiu.md) modding notes for the Wii u
 	* [vWii](mods/vwii.md) modding notes for the virtual Wii modding
