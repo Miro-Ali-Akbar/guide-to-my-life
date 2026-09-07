@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Usage: sudo ./setup_wireguard_always_on.sh /path/to/client.conf
+# Usage: sudo ./setup_wireguard.sh /path/to/client.conf
 #
 #
 
@@ -10,6 +10,9 @@ set -euo pipefail
 HOME_SSID="The_Armor"
 LAN_HOSTNAME="storage.miro.zip"
 LAN_IP="192.168.0.176"
+SMB_SHARE="share"
+REAL_USER="${SUDO_USER:-$(logname)}"
+REAL_UID="$(id -u "$REAL_USER")"
 # ---
 
 if [ "$#" -ne 1 ]; then
@@ -50,6 +53,8 @@ cat > "$DISPATCHER_PATH" <<EOF
 HOSTS_MARKER="# $LAN_HOSTNAME (home LAN override, managed by NetworkManager dispatcher)"
 HOSTS_LINE="$LAN_IP $LAN_HOSTNAME \$HOSTS_MARKER"
 HOME_SSID="$HOME_SSID"
+REAL_USER="$REAL_USER"
+REAL_UID="$REAL_UID"
 
 is_home() {
     nmcli -t -f active,ssid dev wifi 2>/dev/null | grep -q "^yes:\${HOME_SSID}\$"
@@ -60,6 +65,15 @@ sed -i "\\|\$HOSTS_MARKER|d" /etc/hosts
 if is_home; then
     echo "\$HOSTS_LINE" >> /etc/hosts
 fi
+
+# GVFS/Nautilus keeps the previous SMB session alive across network
+# changes, so a saved bookmark tries the dead connection first and hangs
+# through a slow SMB timeout before retrying fresh. Force-unmount it here
+# so the next click always starts clean.
+sudo -u "\$REAL_USER" \\
+    XDG_RUNTIME_DIR="/run/user/\$REAL_UID" \\
+    DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/\$REAL_UID/bus" \\
+    gio mount -u "smb://$LAN_HOSTNAME/$SMB_SHARE" >/dev/null 2>&1 || true
 EOF
 chmod 755 "$DISPATCHER_PATH"
 chown root:root "$DISPATCHER_PATH"
